@@ -52,7 +52,7 @@ module.exports = {
   ],
   styleResources: {
     // Global SCSS
-    scss: [],
+    scss: ['~/assets/scss/_variables.scss'],
   },
 
   // loading: {
