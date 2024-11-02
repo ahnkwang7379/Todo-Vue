@@ -1,5 +1,3 @@
-const PACKAGE_VERSION = require('./package.json').version;
-
 const sass = {
   implementation: require('sass'),
 };

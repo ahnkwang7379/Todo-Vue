@@ -1,19 +1,19 @@
 const initState = () => {
-    return {
-        stateTest: 'isTest',
-    }
-}
+  return {
+    stateTest: 'isTest',
+  };
+};
 
 export const state = () => initState();
 
 export const getters = {
-    initState: ({ initState }) => initState,
+  initState: ({ initState }) => initState,
 };
 
 export const actions = {
-    // actions
-}
+  // actions
+};
 
 export const mutations = {
-    // mutations
-}
+  // mutations
+};
