@@ -2,8 +2,8 @@
   <article id="app" class="app">
     <default-header />
 
-    <main class="main">
-      <nuxt />
+    <main role="main" class="main">
+      <nuxt class="main__contents" />
     </main>
 
     <default-footer />
@@ -26,10 +26,18 @@ export default {
 
 <style lang="scss" scoped>
 .app {
+  min-width: 360px;
   width: 100%;
 }
 
 .main {
   width: 100%;
+
+  // 컨텐츠 중앙으로 정렬
+  &__contents {
+    max-width: $max-contents-width;
+    width: 100vw;
+    margin: 0 auto;
+  }
 }
 </style>
