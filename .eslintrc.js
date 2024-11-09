@@ -11,5 +11,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'vue/no-unused-components': 'error',
+    'no-console': process.env.MODE === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.MODE === 'production' ? 'error' : 'off',
   },
 };
