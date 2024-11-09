@@ -53,14 +53,14 @@ module.exports = {
     scss: ['~/assets/scss/_variables.scss'],
   },
 
-  // loading: {
-  //   color: '#4C82EE',
-  // },
-
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  // axios: {
-  //   baseURL: process.env.API,
-  // },
+  axios: {
+    baseURL: process.env.SUPABASE_URL,
+    headers: {
+      apiKey: process.env.SUPABASE_KEY,
+      Authorization: `Bearer ${process.env.SUPABASE_KEY}`,
+    },
+  },
 
   router: {
     middleware: [],
