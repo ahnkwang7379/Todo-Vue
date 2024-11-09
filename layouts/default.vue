@@ -16,10 +16,11 @@
  * 기본 레이아웃 정의
  */
 
+import DefaultFooter from '@/components/layout/DefaultFooter.vue';
 import DefaultHeader from '@/components/layout/DefaultHeader.vue';
 
 export default {
-  components: { DefaultHeader },
+  components: { DefaultHeader, DefaultFooter },
   // 기본 레이아웃에 적용해야하는 로직이 있다면 이곳에 정의
 };
 </script>
