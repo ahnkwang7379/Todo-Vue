@@ -11,7 +11,7 @@ export default {
     this.getTodoList();
   },
   methods: {
-    ...mapActions(['getTodoList']),
+    ...mapActions('todo', ['getTodoList']),
   },
 };
 </script>
