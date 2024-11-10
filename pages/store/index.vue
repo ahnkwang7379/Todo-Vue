@@ -1,5 +1,11 @@
 <template>
-  <article class="store"></article>
+  <article class="store">
+    <!-- 투두 인풋 -->
+    <store-todo-input />
+
+    <!-- 투두 리스트 -->
+    <store-todo-list />
+  </article>
 </template>
 
 <script>
@@ -10,8 +16,12 @@
 
 import { mapActions } from 'vuex';
 
+import StoreTodoInput from '@/components/todo/store/StoreTodoInput.vue';
+import StoreTodoList from '@/components/todo/store/StoreTodoList.vue';
+
 export default {
   name: 'StorePage',
+  components: { StoreTodoInput, StoreTodoList },
   fetchOnServer: false,
   async fetch() {
     try {
