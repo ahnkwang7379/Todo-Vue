@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "env": {
-    "NPM_CONFIG_PRODUCTION": "false"
-  },
   "builds": [
     {
       "src": "nuxt.config.js",
       "use": "@nuxtjs/vercel-builder"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "YARN_PRODUCTION": "false"
+    }
+  }
 }
