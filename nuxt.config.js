@@ -48,7 +48,6 @@ module.exports = {
     '@nuxtjs/axios',
     // scss
     '@nuxtjs/style-resources',
-    '@nuxt/image',
   ],
   styleResources: {
     // Global SCSS
