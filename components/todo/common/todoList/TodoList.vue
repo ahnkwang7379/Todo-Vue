@@ -9,7 +9,7 @@
 <script>
 /**
  * @description
- * TodoList 컴포넌트
+ * TodoList 컴포넌트 UI부분
  */
 
 import TodoItem from '../todoItem/TodoItem.vue';
