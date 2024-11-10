@@ -4,6 +4,8 @@ const sass = {
 
 // eslint-disable-next-line nuxt/no-cjs-in-config
 module.exports = {
+  target: 'server',
+  ssr: true,
   env: {
     ...process.env,
   },
