@@ -20,6 +20,7 @@
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/style-resources": "^1.0.0",
+    "node-fetch-native": "^1.6.4",
     "sass": "^1.54.9"
   },
   "devDependencies": {
