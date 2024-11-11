@@ -29,6 +29,8 @@ export default {
 .app {
   min-width: 360px;
   width: 100%;
+  height: 100vh;
+  background-color: #f1f3f5;
 }
 
 .main {
