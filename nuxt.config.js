@@ -24,6 +24,13 @@ module.exports = {
           'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover',
       },
     ],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.png',
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
