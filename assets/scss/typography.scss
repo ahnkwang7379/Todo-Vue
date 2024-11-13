@@ -1,0 +1,93 @@
+@use 'sass:map';
+@use 'sass:math';
+
+// px값을 rem으로 변환시켜서 사용하게 해주는 함수
+@function pixelToRem($value) {
+  $unit: math.unit($value);
+
+  @if $value == 0 {
+    @return 0;
+  } @else if $unit == 'rem' {
+    @return $value;
+  } @else if $unit == 'px' {
+    @return math.div($value, 16px) * 1rem;
+  } @else {
+    @error 'Value must be in px, or rem.';
+  }
+}
+
+$font-size-list-mobile: (
+  h1: pixelToRem(24px),
+  h2: pixelToRem(20px),
+  h3: pixelToRem(16px),
+  div: pixelToRem(16px),
+  p: pixelToRem(13px),
+  span: pixelToRem(13px),
+) !default;
+
+$font-size-list-desktop: (
+  h1: pixelToRem(28px),
+  h2: pixelToRem(24px),
+  h3: pixelToRem(19px),
+  div: pixelToRem(19px),
+  p: pixelToRem(16px),
+  span: pixelToRem(16px),
+) !default;
+
+$font-line-height-list: (
+  h1: 100%,
+  h2: 100%,
+  h3: 100%,
+  div: 160%,
+  p: 160%,
+  span: 160%,
+) !default;
+
+$font-weight-list: (
+  h1: 700,
+  h2: 700,
+  h3: 500,
+  div: 400,
+  p: 400,
+  span: 400,
+) !default;
+
+@mixin font-size-media($variant) {
+  // mobile
+  @media (max-width: $media-width) {
+    font-size: pixelToRem(map.get($font-size-list-mobile, $variant));
+  }
+
+  // desktop
+  @media (min-width: $media-width) {
+    font-size: pixelToRem(map.get($font-size-list-desktop, $variant));
+  }
+}
+
+@mixin font-style($variant: div) {
+  & {
+    line-height: map.get($font-line-height-list, $variant);
+    font-weight: map.get($font-weight-list, $variant);
+  }
+  @include font-size-media($variant);
+}
+
+h1 {
+  @include font-style(h1);
+}
+
+h2 {
+  @include font-style(h2);
+}
+
+div {
+  @include font-style(div);
+}
+
+p {
+  @include font-style(p);
+}
+
+span {
+  @include font-style(span);
+}
