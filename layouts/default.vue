@@ -5,8 +5,6 @@
     <main role="main" class="main">
       <nuxt class="main__contents" />
     </main>
-
-    <default-footer />
   </article>
 </template>
 
@@ -16,11 +14,10 @@
  * 기본 레이아웃 정의
  */
 
-import DefaultFooter from '@/components/layout/DefaultFooter.vue';
 import DefaultHeader from '@/components/layout/DefaultHeader.vue';
 
 export default {
-  components: { DefaultHeader, DefaultFooter },
+  components: { DefaultHeader },
   // 기본 레이아웃에 적용해야하는 로직이 있다면 이곳에 정의
 };
 </script>
