@@ -25,13 +25,13 @@ export default {
 <style lang="scss" scoped>
 .app {
   min-width: 360px;
-  background-color: $grey-100;
 }
 
 .main {
   width: 100vw;
-  height: 100vh;
+  background-color: $grey-100;
   display: flex;
+  padding-top: $header-height;
 
   // 컨텐츠 중앙으로 정렬
   &__contents {
