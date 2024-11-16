@@ -1,9 +1,9 @@
 <template>
-  <form class="todo-input" @submit="handleOnSubmit">
+  <form class="todo-input" @submit.prevent="handleOnSubmit">
     <!-- 인풋박스 -->
-    <simple-input />
+    <simple-input id="todo" :value="todoInput" @update-value="updateValue" />
 
-    <!-- 추가 버튼 -->
+    <!-- Submit 호출하는 추가 버튼 -->
     <add-todo-button />
   </form>
 </template>
@@ -20,9 +20,18 @@ import SimpleInput from './SimpleInput.vue';
 export default {
   name: 'TodoInput',
   components: { SimpleInput, AddTodoButton },
+  data() {
+    return {
+      todoInput: '',
+    };
+  },
   methods: {
+    updateValue(v) {
+      this.todoInput = v;
+    },
     handleOnSubmit() {
-      console.log('submit');
+      this.$emit('submit', { title: this.todoInput });
+      this.todoInput = '';
     },
   },
 };

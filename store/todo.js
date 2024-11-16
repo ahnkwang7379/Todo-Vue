@@ -7,6 +7,8 @@
  * mutations: state CRUD
  */
 
+import toCamelCaseObjectKey from '@/utils/toCamelCaseObjectKey';
+
 /**
  * @description
  * 스토어 초기값.
@@ -15,8 +17,7 @@
  */
 const initState = () => {
   return {
-    // todoList: [],
-    todoList: Array.from({ length: 100 }, (_, index) => ({ id: index })),
+    todoList: [],
   };
 };
 
@@ -41,6 +42,21 @@ export const actions = {
       console.error(e);
     }
   },
+  /**
+   * @description
+   * 입력받은 todo를 추가해줍니다.
+   */
+  async createTodo(_, { title, todo }) {
+    try {
+      await this.$axios.$post(`/rest/v1/todo`, {
+        title,
+        todo,
+        check: false,
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  },
 };
 
 export const mutations = {
@@ -50,6 +66,7 @@ export const mutations = {
   },
   // set todoList
   SET_TODO_LIST(state, todoList) {
-    state.todoList = [...state.todoList, ...todoList];
+    const camelCaseArr = todoList.map(toCamelCaseObjectKey);
+    state.todoList = [...state.todoList, ...camelCaseArr];
   },
 };
