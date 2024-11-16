@@ -15,7 +15,8 @@
  */
 const initState = () => {
   return {
-    todoList: [],
+    // todoList: [],
+    todoList: Array.from({ length: 100 }, (_, index) => ({ id: index })),
   };
 };
 
