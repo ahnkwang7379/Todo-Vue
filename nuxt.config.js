@@ -62,7 +62,7 @@ module.exports = {
   ],
   styleResources: {
     // Global SCSS
-    scss: ['~/assets/scss/_variables.scss'],
+    scss: ['~/assets/scss/_variables.scss', '~/assets/scss/_color.scss'],
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
