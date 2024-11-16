@@ -25,19 +25,19 @@ export default {
 <style lang="scss" scoped>
 .app {
   min-width: 360px;
-  width: 100%;
-  height: 100vh;
-  background-color: #f1f3f5;
+  background-color: $grey-100;
 }
 
 .main {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
 
   // 컨텐츠 중앙으로 정렬
   &__contents {
     max-width: $max-contents-width;
     width: 100vw;
-    margin: 0 auto;
+    margin: auto;
   }
 }
 </style>

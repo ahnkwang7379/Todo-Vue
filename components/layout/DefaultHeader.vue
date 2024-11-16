@@ -16,7 +16,7 @@
           :to="to"
           class="header__link"
         >
-          <span>{{ text }}</span>
+          <h3>{{ text }}</h3>
         </nuxt-link>
       </div>
     </section>
@@ -28,17 +28,16 @@
  * @description
  * 전역 레이아웃에 쓰일 헤더 컴포넌트
  */
+
+import { navigationList } from '@/utils/navigation.js';
+
 export default {
   name: 'DefaultHeader',
   data() {
     return {
       logoImage: require('@/static/favicon.png'),
       jellyImage: require('@/static/jellyppi.gif'),
-      navList: [
-        { text: 'Store', to: '/store' },
-        { text: 'Prop', to: '/prop' },
-        { text: 'Provide', to: '/provide' },
-      ],
+      navList: navigationList,
     };
   },
 };
@@ -53,12 +52,17 @@ export default {
   max-width: $max-contents-width;
 
   &__wrapper {
+    position: fixed;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: white;
+    background-color: $white;
     height: $header-height;
+
+    box-shadow: 0px 8px 16px 0px rgba(75, 76, 87, 0.08),
+      0px 0px 4px 0px rgba(75, 76, 87, 0.04);
   }
 
   &__logo {
@@ -76,7 +80,7 @@ export default {
     height: 100%;
     padding: 16px 32px;
     &:hover {
-      background-color: #f8f9fa;
+      background-color: $grey-50;
     }
   }
 }
