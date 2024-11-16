@@ -45,6 +45,7 @@ export default {
   width: 600px;
   height: 600px;
   background-color: $white;
+  border-radius: 16px;
 
   box-shadow: 0px 8px 16px 0px rgba(75, 76, 87, 0.08),
     0px 0px 4px 0px rgba(75, 76, 87, 0.04);
