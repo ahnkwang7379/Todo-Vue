@@ -25,9 +25,7 @@ export default {
   fetchOnServer: false,
   async fetch() {
     try {
-      const res = await this.getTodoList();
-
-      console.log(res);
+      await this.getTodoList();
     } catch (e) {
       console.error(e);
     }
@@ -47,5 +45,9 @@ export default {
 .store {
   display: flex;
   flex-direction: column;
+
+  background-color: $white;
+
+  padding: 20px;
 }
 </style>

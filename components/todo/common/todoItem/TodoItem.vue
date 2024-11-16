@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="toLink" class="todo-item">
-    <div>내부 데이터 보여줄곳~</div>
+    <div>{{ title }} {{ createdAt }} {{ updatedAt }}</div>
   </nuxt-link>
 </template>
 
@@ -14,6 +14,9 @@ export default {
   components: {},
   props: {
     id: { type: Number, required: true, default: -1 },
+    title: { type: String, default: null },
+    createdAt: { type: String, required: true },
+    updatedAt: { type: String, required: true },
   },
   data: ({ $route, id }) => {
     return {
