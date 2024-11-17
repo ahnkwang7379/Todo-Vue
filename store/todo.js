@@ -44,14 +44,47 @@ export const actions = {
   },
   /**
    * @description
+   * 단일 todo 조회
+   */
+  async getTodo(_, { id }) {
+    console.log(id);
+    try {
+      const res = await this.$axios.$get(`/rest/v1/todo`, {
+        params: {
+          id: `eq.${id}`,
+        },
+      });
+
+      console.log(res);
+    } catch (e) {
+      console.error(e);
+    }
+  },
+  /**
+   * @description
    * 입력받은 todo를 추가해줍니다.
    */
-  async createTodo(_, { title, todo }) {
+  async createTodo(_, { title, description }) {
     try {
       await this.$axios.$post(`/rest/v1/todo`, {
         title,
-        todo,
+        description,
         check: false,
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  },
+  /**
+   * @description
+   * id에 해당하는 todo를 수정합니다.
+   */
+  async updateTodo(_, { id, title, description, check }) {
+    try {
+      await this.$axios.$patch(`/rest/v1/todo?id=eq.${id}`, {
+        title,
+        description,
+        check,
       });
     } catch (e) {
       console.error(e);
